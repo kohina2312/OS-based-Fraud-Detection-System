@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Safe Transactions</title>
+    <style>
+        body {
+            font-family: Arial;
+        }
+        h2 {
+            color: green;
+        }
+        table {
+            border-collapse: collapse;
+            width: 90%;
+            margin: 20px auto;
+        }
+        th, td {
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        th {
+            background-color: #e0f7e9;
+        }
+    </style>
+</head>
+<body>
+    <h2 align="center">✅ Safe Transactions</h2>
+
+    {% if transactions %}
+    <table>
+        <tr>
+            <th>Txn ID</th>
+            <th>Timestamp</th>
+            <th>Amount</th>
+            <th>Location</th>
+            <th>CardHolder</th>
+            <th>Merchant</th>
+            <th>Type</th>
+        </tr>
+        {% for txn in transactions %}
+        <tr>
+            <td>{{ txn.TransactionID }}</td>
+            <td>{{ txn.Timestamp }}</td>
+            <td>{{ txn.Amount }}</td>
+            <td>{{ txn.Location }}</td>
+            <td>{{ txn.CardHolderID }}</td>
+            <td>{{ txn.MerchantID }}</td>
+            <td>{{ txn.TransactionType }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+        <p align="center">No safe transactions found.</p>
+    {% endif %}
+</body>
+</html>

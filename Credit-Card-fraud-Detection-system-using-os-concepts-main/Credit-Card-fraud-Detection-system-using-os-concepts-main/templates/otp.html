@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OTP Verification</title>
+</head>
+<body>
+    <h2>Enter OTP for Transaction {{ txn_id }}</h2>
+    <form method="POST" action="{{ url_for('verify_otp', txn_id=txn_id) }}">
+        <input type="text" name="otp" placeholder="Enter OTP" required>
+        <button type="submit">Verify</button>
+    </form>
+</body>
+</html>
